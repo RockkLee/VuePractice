@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="printID">
+        <h1>1. basic VueJS</h1>
+        <hr>
+        <br>
+
+        <h2>Print here (1): {{print1}}</h2>
+        <h2>Print here (2): {{print2}}</h2>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        //創建Vue實例
+        const vm = new Vue({
+            el:"#printID", //el用於綁定容器，使用CSS選擇器來綁定。
+            data:{         //提供給el使用的數據
+                print1: "Life is bitch",
+                print2: "fuck my life"
+            }
+        });
+        
+        //HTTP reuqest 套件
+        /*
+        axios({
+            
+        })
+        */
+    </script>
+    
+</body>
+</html>

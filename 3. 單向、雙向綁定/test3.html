@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="printID">
+        <h1>3. 單向、雙向綁定</h1>
+        <hr><br>
+
+        <h2>
+            單向綁定: 
+              <input type="text" v-bind:value="one_way_binding"> ， echo: {{one_way_binding}}
+              <br>
+            單向綁定 (省略語法): 
+              <input type="text" :value="one_way_binding_2"> ， echo: {{one_way_binding_2}}
+              <br><br>
+
+            雙向綁定: 
+              <input type="text" v-model:value="two_way_binding"> ， echo: {{two_way_binding}}
+        </h2>
+        
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        //創建Vue實例
+        const vm = new Vue({
+            el:"#printID", //el用於綁定容器，使用CSS選擇器來綁定。
+            data:{         //提供給el使用的數據
+                one_way_binding: "請輸入單向綁定值",
+                one_way_binding_2: "請輸入單向綁定值",
+                two_way_binding: "請輸入雙向綁定值"
+            }
+        });
+        
+        //HTTP reuqest 套件
+        /*
+        axios({
+            
+        })
+        */
+    </script>
+    
+</body>
+</html>

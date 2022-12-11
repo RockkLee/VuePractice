@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="printID">
+        <h1>4. event handling 事件處理</h1>
+        <hr><br>
+
+        <h2>
+            <input v-model="var1" type="text"> <!--不傳參數，預設傳$event -->     
+            <button v-on:click="showInfo1">Btn不傳參數</button>
+            <button @click="showInfo2($event,12345)">Btn傳參數</button>
+            <button @click="showInfo3()">echo input_text裡面的變數</button>
+        </h2>
+        
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        //創建Vue實例
+        const vm = new Vue({
+            el:"#printID", //el用於綁定容器，使用CSS選擇器來綁定。
+            data:{         //提供給el使用的數據
+                var1: "default_val"
+            },
+            methods:{
+                showInfo1(){
+                    alert('showInfo1');
+                },
+                showInfo2(event, var1){
+                    alert('showInfo2');
+                    alert('取得參數var1: ' + var1);
+                },
+                showInfo3(){
+                    alert('showInfo3');
+                    alert(this.var1);
+                }
+            }
+        });
+        
+        //HTTP reuqest 套件
+        /*
+        axios({
+            
+        })
+        */
+    </script>
+    
+</body>
+</html>

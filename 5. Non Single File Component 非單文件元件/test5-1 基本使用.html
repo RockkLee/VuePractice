@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="printID">
+        <h1>5. Non Single File Component (非單文件元件)</h1>
+        <hr><br>
+        
+         <!-- 3. 新增要容納元件的容器 -->
+        <div id="root">
+            <!-- 4. 撰寫元件標籤 -->
+            <br>
+            <school_instance></school_instance>
+            <br>
+            <school_instance></school_instance>
+        </div>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        
+        //1. 新增元件
+        const school = Vue.extend({
+            //組件不能調用el
+            
+            name:'school',
+
+            //畫面模板
+            template:`
+                <h2>
+                    <h3>學校名稱: {{name}}</h3>
+                    <h3>學校地址: {{address}}</h3>
+                </h2>
+            `,
+
+            //原本的data寫法是直接定義一個object
+            //這個寫法是寫成一個能回傳object的function，用圖類似class
+            data(){
+                return {
+                    name: "UUU",
+                    address: "Taipei"
+                }
+            },
+            methods:{
+
+            }
+        })
+
+        //2. 註冊元件
+        new Vue({
+            el:'#root',
+            components:{
+                school_instance: school
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        插值語法: 用於解析Tag裡面的內容
+        指令語法: 用於解析Tag標籤 (ex: href, id, class...)
+     -->
+    <div id="printID">
+        <h1>2. 插值語法"{{}}" vs 指令語法"v-bind"</h1>
+        <hr><br>
+                       <!--引號裡面放的不是字串，是變數、javascript語法  -->
+        <a v-bind:href="tag">  <h1>{{content}}</h1>  </a>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        //創建Vue實例
+        const vm = new Vue({
+            el:"#printID", //el用於綁定容器，使用CSS選擇器來綁定。
+            data:{         //提供給el使用的數據
+                tag: "https://google.com",
+                content: "go to google home page"
+            }
+        });
+        
+        //HTTP reuqest 套件
+        /*
+        axios({
+            
+        })
+        */
+    </script>
+    
+</body>
+</html>
